@@ -34,9 +34,9 @@
 ;Escribir una función que calcule el perímetro de un cuadrado
 
 (define (squarePerimeter perimeter)
-    (define operation2 ( * perimeter 4)
+    (define operation ( * perimeter 4)
     ) 
-    operation2
+    operation
 )
 
 (squarePerimeter 2)
@@ -44,5 +44,19 @@
 ;Escribir una función que convierta una temperatura en grados Fahrenheit a grados Celsius.
 
 (define (temperature fahrenheit )
-    (define convertion (/(- fahrenheit 32)5/9))convertion)
+    (define convertion (/(- fahrenheit 32)5/9))
+    convertion
+)
 (temperature 32)
+
+
+
+(define (myNameWithParameters)
+    (define text1 (read))
+    (define text2 (read))
+   (displayln (string-append text1 " " text2))
+)
+
+(myNameWithParameters)
+
+

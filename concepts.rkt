@@ -42,6 +42,14 @@ add
 
 ;Know if a number is exact or no it'll result is true or false
 (exact? 5)
+(exact? 5.2)
+
+
+;text escapar quotes. Display solo se usa cuanndo se quieren imprimer simbolos especiales para escapar.
+(display "He told me \"yes\"\n")
+
+;Salto de linea
+(display "I am\nYou are")
 
 
 
