@@ -51,12 +51,12 @@
 
 
 
-(define (myNameWithParameters)
+(define (textWithReadFunction)
     (define text1 (read))
     (define text2 (read))
    (displayln (string-append text1 " " text2))
 )
 
-(myNameWithParameters)
+(textWithReadFunction)
 
 
