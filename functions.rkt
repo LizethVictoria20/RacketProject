@@ -92,3 +92,13 @@ Para escribir el dato que se pide en la consola se deben poner entre comillas y 
     (display myName)
 )
 (fullName2 (read) (read))
+
+
+#|
+Disyunción al menos una es verdadera para que sea igual a verdad
+Conjunción si o si ambas deben de ser verdaderas
+|#
+(and (number? 3)(not (number? "3"))) #t
+(and (= 3 8)(not (number? "3"))) #f
+(or (= 3 8)(not (number? "3"))) #t
+(or (= 3 8)(string? '3)) #f
