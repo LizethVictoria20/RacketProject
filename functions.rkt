@@ -80,3 +80,15 @@ string-append se usa para concatenar textos/variables
 )
 
 (fullName (read) (read))
+
+
+#|
+Misma funcion de arriba pero sin necesidad de cambiar el tipo de dato de la variable.
+Para escribir el dato que se pide en la consola se deben poner entre comillas y sin espcacios
+|#
+(define (fullName2 name last)
+    (display "Mi nombre es: ")
+    (define myName (string-append name " " last))
+    (display myName)
+)
+(fullName2 (read) (read))
