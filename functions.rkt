@@ -84,7 +84,8 @@ string-append se usa para concatenar textos/variables
 
 #|
 Misma funcion de arriba pero sin necesidad de cambiar el tipo de dato de la variable.
-Para escribir el dato que se pide en la consola se deben poner entre comillas y sin espcacios
+Para escribir el dato que se pide en la consola se deben poner entre comillas y 
+sin espcacios para que asi la funcion string-append la reconozca como un string
 |#
 (define (fullName2 name last)
     (display "Mi nombre es: ")
@@ -102,3 +103,28 @@ Conjunción si o si ambas deben de ser verdaderas
 (and (= 3 8)(not (number? "3"))) #f
 (or (= 3 8)(not (number? "3"))) #t
 (or (= 3 8)(string? '3)) #f
+
+
+;condicionales
+(define salario 1000)
+(and ( < salario 2000) (> salario 1500 ))
+
+
+#|
+Definir funcion que reciba uan parametro n
+Utilizar los ejemplos de condiciones que estan en la diapositiva
+[(< n 10) 5.0]
+|#
+
+(define (greaterThan n)
+    (cond
+        [(< n 10) 5.0]
+        [(< n 20) 5]
+        [(< n 30) true]
+        [else (display "n es menor")]
+    )
+
+
+)
+(greaterThan (read))
+
