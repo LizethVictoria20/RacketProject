@@ -60,3 +60,23 @@
 (textWithReadFunction)
 
 
+
+
+#|
+Crear funcion que reciba el nombre por dos parametros.
+El symbol->string se usa para cambiar el tipo de dato de una variable
+string-append se usa para concatenar textos/variables
+|#
+(define (fullName name last)
+    (display "Mi nombre es: ")
+    (define firstName name)
+    (define convertionName(symbol->string firstName))
+    (define lastName last)
+    (define convertionLast (symbol->string lastName))     
+
+    (define myName (string-append convertionName " " convertionLast))
+
+    (display myName)
+)
+
+(fullName (read) (read))
