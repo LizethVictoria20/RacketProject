@@ -52,7 +52,7 @@ Definir funcion que tome 4 parametros para sacar el promedio porcentual de una m
             (display promedio)
         ]
 
-        [else (display "no es")]
+        [else (display "Ingrese una asignatura correcta")]
     )
 )
 
