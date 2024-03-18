@@ -37,18 +37,18 @@ Definir funcion que tome 4 parametros para sacar el promedio porcentual de una m
 |#
 
 
-(define (notaFinal materia p1 p2 q)
+(define (notaFinal materia primerParcial segundoParcial quiz)
     (cond
         [(symbol=? materia 'Calculo) 
-            (define promedio (+ (* p1 0.3) (* p2 0.3) (* q 0.4)))
+            (define promedio (+ (* primerParcial 0.3) (* segundoParcial 0.3) (* quiz 0.4)))
             (display promedio)
         ]
         [(symbol=? materia 'Ingles) 
-            (define promedio (+ (* p1 0.5) (* p2 0.2) (* q 0.3)))
+            (define promedio (+ (* primerParcial 0.5) (* segundoParcial 0.2) (* quiz 0.3)))
             (display promedio)
         ]
         [(symbol=? materia 'Deportes) 
-            (define promedio (+ (* p1 0.7) (* p2 0.2) (* q 0.1)))
+            (define promedio (+ (* primerParcial 0.7) (* segundoParcial 0.2) (* quiz 0.1)))
             (display promedio)
         ]
 
