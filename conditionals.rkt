@@ -4,32 +4,32 @@
 Disyunción al menos una es verdadera para que sea igual a verdad
 Conjunción si o si ambas deben de ser verdaderas
 |#
-; (and (number? 3)(not (number? "3"))) #t
-; (and (= 3 8)(not (number? "3"))) #f
-; (or (= 3 8)(not (number? "3"))) #t
-; (or (= 3 8)(string? '3)) #f
+ (and (number? 3)(not (number? "3"))) #t
+ (and (= 3 8)(not (number? "3"))) #f
+ (or (= 3 8)(not (number? "3"))) #t
+ (or (= 3 8)(string? '3)) #f
 
 
-; ;condicionales
-; (define salario 1000)
-; (and ( < salario 2000) (> salario 1500 ))
+;condicionales
+ (define salario 1000)
+ (and ( < salario 2000) (> salario 1500 ))
 
 
-; #|
-; Definir funcion que reciba uan parametro n
-; Utilizar los ejemplos de condiciones que estan en la diapositiva
-; [(< n 10) 5.0]
-; |#
+ #|
+ Definir funcion que reciba uan parametro n
+ Utilizar los ejemplos de condiciones que estan en la diapositiva
+ [(< n 10) 5.0]
+ |#
 
-; (define (greaterThan n)
-;     (cond
-;         [(< n 10) 5.0]
-;         [(< n 20) 5]
-;         [(< n 30) true]
-;         [else (display "n es menor")]
-;     )
-; )
-; (greaterThan (read))
+ (define (greaterThan n)
+     (cond
+         [(< n 10) 5.0]
+         [(< n 20) 5]
+         [(< n 30) true]
+         [else (display "n es menor")]
+     )
+ )
+ (greaterThan (read))
 
 
 #|
@@ -68,3 +68,42 @@ Definir funcion que tome 4 parametros para sacar el promedio porcentual de una m
 
 
 (notaFinal materia primerParcial segundoParcial parcialFinal)
+
+
+
+#|
+Misma funcion de arriba pero definida de una manera menos eficiente
+|#
+
+(define (notaFinal)
+    (display "Ingresa el nombre de la materia: ")
+    (define calculo 'M1)
+    (define ingles 'M2)
+    (define fundamentos 'M3)
+    (define deportes 'M4)
+    (define codigoMateria (read))(newline)
+    (display "Ingresar nota parcial 1: ")
+    (define notaP1 (read))(newline)
+    (display "Ingresar nota parcial 2: ")
+    (define notaP2 (read))(newline)
+    (display "Ingresar nota parcial 3: ")
+    (define notaP3 (read))(newline)
+    (display "Ingresar nota parcial 4: ")
+    (define notaP4 (read))(newline)
+    (display "Ingresar nota quiz: ")
+    (define quiz (read))(newline)
+    (display "Esta es tu nota final: ")
+
+    (cond
+        [(symbol=? codigoMateria 'M1)
+            (+ (+ (* notaP1 0.3) (* notaP2 0.3) (* quiz 0.4)))
+        ]
+        [(symbol=? codigoMateria 'M2)
+            (+ (+ (* notaP1 0.3) (* notaP2 0.3) (* quiz 0.4)))
+        ]
+        [(symbol=? codigoMateria 'M3)
+            (+ (+ (* notaP1 0.3) (* notaP2 0.3) (* quiz 0.4)))
+        ]
+    )
+)
+(notaFinal)
