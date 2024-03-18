@@ -35,6 +35,8 @@ Conjunción si o si ambas deben de ser verdaderas
 #|
 Definir funcion que tome 4 parametros para sacar el promedio porcentual de una materia 
 |#
+
+
 (define (notaFinal materia p1 p2 q)
     (cond
         [(symbol=? materia 'Calculo) 
@@ -53,5 +55,16 @@ Definir funcion que tome 4 parametros para sacar el promedio porcentual de una m
         [else (display "no es")]
     )
 )
-(notaFinal (read) (read) (read) (read))
 
+
+(display "Ingrese la materia que quiere promediar: ")
+(define materia (read))
+(display "Ingrese la primera nota del primer parcial: ")
+(define primerParcial (read))
+(display "Ingrese la segunda nota del segundo parcial: ")
+(define segundoParcial (read))
+(display "Ingrese la nota del parcial final : ")
+(define parcialFinal (read))
+
+
+(notaFinal materia primerParcial segundoParcial parcialFinal)
