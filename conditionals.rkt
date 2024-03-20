@@ -212,3 +212,32 @@ Los años que son divisibles entre 100, pero no entre 400, no son bisiestos.
     )
 )
 (Bisiesto (read))
+
+
+
+(display "Ingresa 1 para suma, 2 para resta, 3 para multiplicacion y 4 para división: ")
+
+(define (Calculadora operador num1 num2)
+    (cond 
+        [(= operador 1) 
+            (+ num1 num2)
+        ]
+        [(= operador 2) 
+            (- num1 num2)
+        ]
+        [(= operador 3) 
+            (* num1 num2)
+        ]
+        [(= operador 4) 
+            (/ num1 num2)
+        ]
+    
+    )
+)
+
+
+(define operador (read))
+(define num1 (read))
+(define num2 (read))
+(display "El resultado de la operación dada es: ")
+(Calculadora operador num1 num2)
