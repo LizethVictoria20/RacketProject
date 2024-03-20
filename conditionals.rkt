@@ -187,24 +187,18 @@ Los años que son divisibles entre 100, pero no entre 400, no son bisiestos.
 
 (define (Bisiesto anio)
     (define divisibleCuatro (remainder anio 4))
-    (define divisibleUno (remainder anio 1))
+    (display divisibleCuatro)
 
     (cond 
-        [(and (= divisibleUno 0) (= divisibleCuatro 0))
-            (display "Es un año bisiesto..")
-            ;1600, 2000, 2400, 2800, 3200
-        ]
-        [(or (= divisibleCuatro 0) (not (= divisibleUno 0)))
-            (display "Es un año bisiesto....")
-            ;4, 8, 12, 16, 20, 24, 28
-
-            ;son divisibles entre 4, pero no entre 100
-        ],
-        [(or (= divisibleUno 0) (not (= divisibleCuatro 0)))
-            (display "No es un año bisiesto")
+        [(= divisibleCuatro 0)
+            (display "Es un año bisiesto.")
             ;100, 200, 300, 500, 600, 700
-
             ;son divisibles entre 100, pero no entre 400, no son bisiestos
+        ]
+        [(not (= divisibleCuatro 0))
+            (display "No es un año bisiesto.")
+            ;4, 8, 12, 16, 20, 24, 28
+            ;son divisibles entre 4, pero no entre 100
         ]
         [else 
             (display "Ninguna")
@@ -216,7 +210,6 @@ Los años que son divisibles entre 100, pero no entre 400, no son bisiestos.
 
 
 (display "Ingresa 1 para suma, 2 para resta, 3 para multiplicacion y 4 para división: ")
-
 (define (Calculadora operador num1 num2)
     (cond 
         [(= operador 1) 
@@ -241,3 +234,4 @@ Los años que son divisibles entre 100, pero no entre 400, no son bisiestos.
 (define num2 (read))
 (display "El resultado de la operación dada es: ")
 (Calculadora operador num1 num2)
+
