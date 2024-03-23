@@ -120,3 +120,35 @@ Crear un programa que pida al usuario un número y determine si es positivo, neg
     )
 )
 (ParOImpar (read))
+
+
+#|Crear un programa que solicite al usuario su género (masculino o femenino) y su edad.
+ Si es hombre y su edad es mayor o igual a 18 años, mostrar un mensaje indicando que
+puede inscribirse en el servicio militar. Si es mujer, mostrar un mensaje indicando 
+que no tiene que inscribirse.|#
+
+
+(display "Ingresa tu género: ")
+(define (ServicioMilitar genero)
+    (define convertionDato (symbol->string genero))
+    (cond
+        [(or (string=? convertionDato "masculino") (string=? convertionDato "Masculino"))
+            (display "Ingresa tu edad: ")
+            (define edad (read))
+            (cond 
+                [(>= edad 18)
+                    (display "Cumples con los requisitos para prestar el servicio militar.")
+                ]
+                [else
+                    (display "Aun no cumples la edad para hacer el servicio militar.")
+                ]
+            )
+        ]
+        [(or (string=? convertionDato "femenino") (string=? convertionDato "Femenino"))
+            (display "No es obligatorio que prestes el servicio militar.")
+        
+        ]
+    )
+)
+
+(ServicioMilitar (read))
