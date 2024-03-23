@@ -2,6 +2,7 @@
 
 #|Crear un programa que solicite al usuario su edad y determine si es mayor o menor de edad.|#
 
+
 ;Función que valida si el valor que ingresa el usuario es un numero.
 (define (validarNumero)
     (displayln "Ingrese tu edad: ")
@@ -95,3 +96,27 @@ Crear un programa que pida al usuario un número y determine si es positivo, neg
 (display "Ingresa segundo número: ")
 (define n2 (read))
 (NumeroMayor n1 n2)
+
+
+
+#|Crear un programa que pida al usuario un número y determine si es par o impar.|#
+(display "Ingrese un número para saber si es par o impar: ")
+(define (ParOImpar n)
+    (cond
+        [(number? n)
+            (cond
+            [(= (remainder n 2) 0)
+                 (display "El número ")
+                 (display n)
+                 (display " es un número par ")
+            ]
+            [else 
+                (display "El número ")
+                (display n)
+                (display " es un número impar ")
+            ]
+        )]
+        [else (displayln "Por favor ingrese un número valido: ") (ParOImpar (read))]
+    )
+)
+(ParOImpar (read))
