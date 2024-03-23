@@ -105,16 +105,16 @@ Crear un programa que pida al usuario un número y determine si es positivo, neg
     (cond
         [(number? n)
             (cond
-            [(= (remainder n 2) 0)
-                 (display "El número ")
-                 (display n)
-                 (display " es un número par ")
-            ]
-            [else 
-                (display "El número ")
-                (display n)
-                (display " es un número impar ")
-            ]
+                [(= (remainder n 2) 0)
+                    (display "El número ")
+                    (display n)
+                    (display " es un número par ")
+                ]
+                [else 
+                    (display "El número ")
+                    (display n)
+                    (display " es un número impar ")
+                ]
         )]
         [else (displayln "Por favor ingrese un número valido: ") (ParOImpar (read))]
     )
