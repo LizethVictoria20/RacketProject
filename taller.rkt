@@ -21,7 +21,7 @@
 (define (EsMayor edad)
     (cond 
         [(>= edad 18)
-            (display "Eres mayor de edad")
+            (displayln "Eres mayor de edad")
         ]
         [else
             (displayln "No eres mayor de edad")
@@ -41,27 +41,57 @@ Crear un programa que pida al usuario un número y determine si es positivo, neg
             [(> number 0)
                 (display "El número ")
                 (display number)
-                (display " es positivo")
+                (displayln " es positivo")
             ]
             [(< number 0)
                 (display "El número ")
                 (display number)
-                (display " es negativo")
+                (displayln " es negativo")
             ]
             [(= number 0)
                 (display "El número ")
                 (display number)
-                (display " es cero")
+                (displayln " es cero")
             ]
             [else
-                (display "Ingresa un número correcto ")
+                (displayln "Ingresa un número correcto ")
             ]
         )]
     [else 
-        (display "Por favor ingrese un número valido: ")(ClasificarNumero (read))
+        (displayln "Por favor ingrese un número valido: ")(ClasificarNumero (read))
     ])
 )
 
 (display "Ingresa numero: ")
 (define numero (read))
 (ClasificarNumero numero)
+
+
+#|Crear un programa que solicite dos números y determine cuál es el mayor de los dos.|#
+(displayln "Ingrese dos número para saber cúal es el mayor.")
+(define (NumeroMayor n1 n2)
+    (cond
+        [(and ( number? n1 ) (number? n2))
+            (cond
+                [(> n1 n2)
+                    (display n1)
+                    (display " es mayor que ")
+                    (display n2)
+                ]
+                [else
+                    (display n1)
+                    (display " es menor que ")
+                    (display n2)
+                ]
+            )
+        ]
+        [else 
+            (display "Uno de los dos datos ingresado es incorrecto, ingresa un valor númerico: " )(NumeroMayor (read) (read))
+        ]
+    )
+)
+(display "Ingresa primer número: ")
+(define n1 (read))
+(display "Ingresa segundo número: ")
+(define n2 (read))
+(NumeroMayor n1 n2)
