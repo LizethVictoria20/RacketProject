@@ -17,16 +17,51 @@
     )
 )
 
-
+(displayln "Ingresa un número para saber si eres mayor de edad")
 (define (EsMayor edad)
     (cond 
         [(>= edad 18)
             (display "Eres mayor de edad")
         ]
         [else
-            (display "No eres mayor de edad")
+            (displayln "No eres mayor de edad")
         ]
         
     )
 )
 (validarNumero)
+
+#|
+Crear un programa que pida al usuario un número y determine si es positivo, negativo o cero.|#
+(displayln "Ingresa un número para saber si es positivo, negativo o si es cero.")
+(define (ClasificarNumero number)
+    (cond 
+        [(number? number)
+            (cond
+            [(> number 0)
+                (display "El número ")
+                (display number)
+                (display " es positivo")
+            ]
+            [(< number 0)
+                (display "El número ")
+                (display number)
+                (display " es negativo")
+            ]
+            [(= number 0)
+                (display "El número ")
+                (display number)
+                (display " es cero")
+            ]
+            [else
+                (display "Ingresa un número correcto ")
+            ]
+        )]
+    [else 
+        (display "Por favor ingrese un número valido: ")(ClasificarNumero (read))
+    ])
+)
+
+(display "Ingresa numero: ")
+(define numero (read))
+(ClasificarNumero numero)
