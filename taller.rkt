@@ -134,18 +134,25 @@ inscribirse en el servicio militar. Si es mujer, mostrar un mensaje indicando qu
     (define genero (read))
     (define convertionDato (symbol->string genero))
     (define lowerCase (string-downcase convertionDato))
-    lowerCase
+    (cond
+        [(string? lowerCase)
+            lowerCase
+        ]
+        [else
+            (display "Ingresa un genero valido")
+        ]
+    )
 )
 
 
-(define (edad)
-    (display "Ingrese la edad: ")
-    (define valorEdad (read))
+(define (ValidarNumero)
+    (display "Ingrese un número: ")
+    (define valorNumerico (read))
     (cond
-        [(number? valorEdad)
-            valorEdad
+        [(number? valorNumerico)
+            valorNumerico
         ]
-        [else (displayln "Ingresa un valor númerico") (edad)]
+        [else (displayln "Ingresa un valor númerico") (ValidarNumero)]
     )
 )
 
@@ -154,7 +161,7 @@ inscribirse en el servicio militar. Si es mujer, mostrar un mensaje indicando qu
     (cond
         [(string=? (Genero) "masculino")
             (cond
-                [(>= (edad) 18)
+                [(>= (ValidarNumero) 18)
                     (display "Eres apto")
                 ]
                 [else (display "No eres apto")]
@@ -169,3 +176,42 @@ inscribirse en el servicio militar. Si es mujer, mostrar un mensaje indicando qu
 )
 (Servicio)
 
+
+#|Crear un programa que pida al usuario un número del 1 al 7 y muestre el día de la semana correspondiente 
+(por ejemplo, si el usuario ingresa 1, el programa debe mostrar "Lunes"). Si el usuario ingresa un número 
+fuera de ese rango, el programa debe mostrar un mensaje de error.|#
+
+
+(define (Week day)
+    (cond
+        [(= day 1)
+            (display "Lunes")
+        ]
+        [(= day 2)
+            (display "Martes")
+        ]
+        [(= day 3)
+            (display "Miercoles")
+        ]
+        [(= day 4)
+            (display "Jueves")
+        ]
+        [(= day 5)
+            (display "Viernes")
+        ]
+        [(= day 6)
+            (display "Sabado")
+        ]
+        [(= day 7)
+            (display "Domingo")
+        ]
+        [else
+            (display "Ingrese un numero del 1 al 7: ") (Week (read))
+        ]
+    )
+
+)
+
+(display "Ingresa un número del 1 al 7 para saber el día de la semana: ")
+(define day (read))
+(Week day)
