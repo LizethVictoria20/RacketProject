@@ -181,33 +181,39 @@ inscribirse en el servicio militar. Si es mujer, mostrar un mensaje indicando qu
 (por ejemplo, si el usuario ingresa 1, el programa debe mostrar "Lunes"). Si el usuario ingresa un número 
 fuera de ese rango, el programa debe mostrar un mensaje de error.|#
 
-
 (define (Week day)
     (cond
-        [(= day 1)
-            (display "Lunes")
-        ]
-        [(= day 2)
-            (display "Martes")
-        ]
-        [(= day 3)
-            (display "Miercoles")
-        ]
-        [(= day 4)
-            (display "Jueves")
-        ]
-        [(= day 5)
-            (display "Viernes")
-        ]
-        [(= day 6)
-            (display "Sabado")
-        ]
-        [(= day 7)
-            (display "Domingo")
+        [(number? day)
+            (cond
+                [(= day 1)
+                    (display "Lunes")
+                ]
+                [(= day 2)
+                    (display "Martes")
+                ]
+                [(= day 3)
+                    (display "Miercoles")
+                ]
+                [(= day 4)
+                    (display "Jueves")
+                ]
+                [(= day 5)
+                    (display "Viernes")
+                ]
+                [(= day 6)
+                    (display "Sabado")
+                ]
+                [(= day 7)
+                    (display "Domingo")
+                ]
+                [else
+                    (display "Ingrese un numero del 1 al 7: ") (Week (read))
+                ])
         ]
         [else
-            (display "Ingrese un numero del 1 al 7: ") (Week (read))
+            (display "Ingrese un número ") (Week (read))
         ]
+        
     )
 
 )
