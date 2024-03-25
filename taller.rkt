@@ -61,6 +61,7 @@ Crear un programa que pida al usuario un número y determine si es positivo, neg
     [else 
         (displayln "Por favor ingrese un número valido: ")(ClasificarNumero (read))
     ])
+    
 )
 
 (display "Ingresa numero: ")
@@ -122,33 +123,49 @@ Crear un programa que pida al usuario un número y determine si es positivo, neg
 (ParOImpar (read))
 
 
-#|Crear un programa que solicite al usuario su género (masculino o femenino) y su edad.
- Si es hombre y su edad es mayor o igual a 18 años, mostrar un mensaje indicando que
-puede inscribirse en el servicio militar. Si es mujer, mostrar un mensaje indicando 
-que no tiene que inscribirse.|#
+#|Crear un programa que solicite al usuario su género (masculino o femenino) y su edad. 
+Si es hombre y su edad es mayor o igual a 18 años, mostrar un mensaje indicando que puede 
+inscribirse en el servicio militar. Si es mujer, mostrar un mensaje indicando que no tiene que inscribirse.|#
 
 
-(display "Ingresa tu género: ")
-(define (ServicioMilitar genero)
+
+(define (Genero)
+    (display "Ingresa tu genero: ")
+    (define genero (read))
     (define convertionDato (symbol->string genero))
+    (define lowerCase (string-downcase convertionDato))
+    lowerCase
+)
+
+
+(define (edad)
+    (display "Ingrese la edad: ")
+    (define valorEdad (read))
     (cond
-        [(or (string=? convertionDato "masculino") (string=? convertionDato "Masculino"))
-            (display "Ingresa tu edad: ")
-            (define edad (read))
-            (cond 
-                [(>= edad 18)
-                    (display "Cumples con los requisitos para prestar el servicio militar.")
-                ]
-                [else
-                    (display "Aun no cumples la edad para hacer el servicio militar.")
-                ]
-            )
+        [(number? valorEdad)
+            valorEdad
         ]
-        [(or (string=? convertionDato "femenino") (string=? convertionDato "Femenino"))
-            (display "No es obligatorio que prestes el servicio militar.")
-        
-        ]
+        [else (displayln "Ingresa un valor númerico") (edad)]
     )
 )
 
-(ServicioMilitar (read))
+
+(define (Servicio)
+    (cond
+        [(string=? (Genero) "masculino")
+            (cond
+                [(>= (edad) 18)
+                    (display "Eres apto")
+                ]
+                [else (display "No eres apto")]
+            )
+        ]
+        [(string=? (Genero) "femenino")
+            (display "No es obligatorio")
+        ]
+        [else (display "Ingrese masculino o femenino")]
+    )
+
+)
+(Servicio)
+
