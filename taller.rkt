@@ -250,3 +250,26 @@ está por encima o por debajo del salario mínimo actual.|#
 )
 (display "Ingrese salario: ")
 (SalarioMinino (read))
+
+
+#|Crear un programa que pida al usuario un número y determine si es 
+divisible entre 3 y 5 al mismo tiempo.|#
+
+(define (NumeroDivisible n)
+    (define divisible1 (remainder n 3))
+    (define divisible2 (remainder n 5))
+    (cond 
+        [(and (= divisible1 0) (= divisible2 0))
+            (display "El número ")
+            (display  n)
+            (display  " es divisible por 3 y por 5 al mismo tiempo.")
+        ]
+        [else
+            (display "El número ")
+            (display  n)
+            (display  " NO es divisible por 3 y por 5 al mismo tiempo.")
+        ]
+    )
+)
+
+(NumeroDivisible (read))
