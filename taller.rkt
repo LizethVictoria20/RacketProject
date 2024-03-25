@@ -221,3 +221,32 @@ fuera de ese rango, el programa debe mostrar un mensaje de error.|#
 (display "Ingresa un número del 1 al 7 para saber el día de la semana: ")
 (define day (read))
 (Week day)
+
+
+#|Crear un programa que solicite al usuario su salario mensual y determine si 
+está por encima o por debajo del salario mínimo actual.|#
+
+(define (SalarioMinino salarioUsuario)
+    (define salario 1300000)
+    (cond
+        [(number? salarioUsuario)
+            (cond
+                [( > salarioUsuario salario)
+                    (display "Salario por encima")
+                ]
+                [( < salarioUsuario salario)
+                    (display "Salario por debajo")
+                ]
+                [( = salarioUsuario salario)
+                    (display "Salario iguales")
+                ]
+            )
+        ]
+        [else
+            (display "Ingrese un valor numerico: ") (SalarioMinino (read))
+        ]
+        
+    )
+)
+(display "Ingrese salario: ")
+(SalarioMinino (read))
