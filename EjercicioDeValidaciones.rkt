@@ -7,9 +7,17 @@ inscribirse en el servicio militar. Si es mujer, mostrar un mensaje indicando qu
 (define (Genero)
     (display "Ingresa tu genero: ")
     (define genero (read))
-    (define convertionDato (symbol->string genero))
-    (define lowerCase (string-downcase convertionDato))
-    lowerCase
+
+    (cond
+        [(symbol? genero)
+            (define convertionDato (symbol->string genero))
+            (define lowerCase (string-downcase convertionDato))
+            lowerCase
+        ]
+        [else
+            (displayln "Ingrese un texto") (Genero)
+        ]
+    )
 )
 
 
