@@ -1,5 +1,8 @@
 #lang racket
 
+#|Crear un programa que solicite al usuario su género (masculino o femenino) y su edad. 
+Si es hombre y su edad es mayor o igual a 18 años, mostrar un mensaje indicando que puede 
+inscribirse en el servicio militar. Si es mujer, mostrar un mensaje indicando que no tiene que inscribirse.|#
 
 (define (Genero)
     (display "Ingresa tu genero: ")
@@ -35,6 +38,7 @@
         [(string=? (Genero) "femenino")
             (display "No es obligatorio")
         ]
+        [else (display "Ingrese masculino o femenino")]
     )
 
 )
