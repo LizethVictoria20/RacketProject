@@ -273,3 +273,40 @@ divisible entre 3 y 5 al mismo tiempo.|#
 )
 
 (NumeroDivisible (read))
+
+
+#|Crear un programa que solicite al usuario su nombre y su edad. 
+Si la edad ingresada es menor a 18 años, mostrar un mensaje de bienvenida
+ y mencionar que su contenido es apto solo para mayores de edad. 
+ Si la edad es mayor o igual a 18, mostrar un mensaje de bienvenida 
+ sin restricciones.|#
+
+
+(define (MayorDeEdad nombre edad)
+(cond
+    [(number? edad)
+        (cond
+            [(>= edad 18)
+                (display "Bienvenido ")
+                (display nombre)
+                (display ", puedes ver todo el contenido sin restricciones")
+            ]
+            [else
+                (display "Bienvenido ")
+                (display nombre)
+                (display ", no puedes ver el  contenido. Solo es apto para mayores de edad.")
+            ]
+        )
+    ]
+    [else 
+        (display "Ingrese una edad válida: ")
+    ]
+
+)
+)
+(display "Ingrese nombre: ")
+(define name (read))
+(display "Ingrese edad: ")
+(define edad (read))
+
+(MayorDeEdad name edad)
