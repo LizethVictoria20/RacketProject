@@ -310,3 +310,34 @@ Si la edad ingresada es menor a 18 años, mostrar un mensaje de bienvenida
 (define edad (read))
 
 (MayorDeEdad name edad)
+
+
+
+#|Crear un programa que pida al usuario dos números y determine
+si el segundo es múltiplo del primero. Si es múltiplo, mostrar el 
+resultado|#
+
+(define (NumeroPar n1 n2)
+    (define multiplo (modulo n2 n1))
+    (cond
+        [(and (number? n1) (number? n2))
+            (cond
+                [(= multiplo 0)
+                    (display n2)
+                    (display " es multiplo ")
+                    (display n1)
+                ]
+                [else
+                    (display n2)
+                    (display " no es multiplo ")
+                    (display n1)
+                ]
+            )
+        ]
+        [else
+            (display "Ingrese valores númericos.")
+        ]
+        
+    )
+)
+(NumeroPar (read) (read))
