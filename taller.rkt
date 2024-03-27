@@ -340,4 +340,8 @@ resultado|#
         
     )
 )
-(NumeroPar (read) (read))
+(display "Ingres el primer número")
+(define n1 (read))
+(display "Ingres el segundo número")
+(define n2 (read))
+(NumeroPar n1 n2)
